@@ -2,13 +2,12 @@ package br.com.fiap.blitzproject
 
 
 import android.os.Bundle
-import android.widget.ImageButton
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+
 
 
 import androidx.compose.foundation.layout.Column
@@ -35,16 +34,10 @@ import androidx.compose.ui.unit.sp
 import br.com.fiap.blitzproject.ui.theme.BlitzProjectTheme
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.materialIcon
 import androidx.compose.material.icons.rounded.Settings
-import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import com.louiscad.splitties.resources.splittiesSvgResource
 
 
 class TelaPrincipal : ComponentActivity() {
@@ -107,7 +100,14 @@ fun TelaInicial() {
                     text = "Adicionar Ocorrência",
                     color = Color.Black
                 )
+                Image(
+                    painter = painterResource(id = R.drawable.bmi_lista),
+                    contentDescription = "Imagem de lista/adição",
+                    modifier = Modifier
+                        .size(40.dp)
+                )
             }
+
             Button(
                 onClick = { /*TODO*/ },
                 modifier = Modifier
@@ -119,6 +119,13 @@ fun TelaInicial() {
                 Text(
                     text = "Avaliar Localização",
                     color = Color.Black
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.bmi_localizacao),
+                    contentDescription = "Logo localização/google maps",
+                    modifier = Modifier
+                        .size(40.dp)
                 )
             }
         }
@@ -140,9 +147,16 @@ fun TelaInicial() {
                     text = "Contato Policial",
                     color = Color.Black
                 )
+                Image(
+                    painter = painterResource(id = R.drawable.bmi_contato),
+                    contentDescription = "Logo Whatsapp",
+                    modifier = Modifier
+                        .size(40.dp)
+                )
             }
-            Button(
 
+
+            Button(
                 onClick = { /*TODO*/ },
                 modifier = Modifier
                     .weight(1f) // Distribuir espaço igualmente entre os botões
@@ -151,10 +165,17 @@ fun TelaInicial() {
 
             ) {
                 Text(
-                    text = "Feedback",
-                    color = Color.Black
+                text = "Feedback",
+                color = Color.Black
+            )
+                Image(
+                    painter = painterResource(id = R.drawable.bmi_feedbackcliente),
+                    contentDescription = "Logo feedback do cliente, polegar positivo.",
+                    modifier = Modifier
+                        .size(40.dp)
                 )
             }
+
         }
 
     }
@@ -181,6 +202,10 @@ fun TelaInicial() {
                 colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
             ) {
                 // Conteúdo do Botão 1 (Ícone 1)
+                Image(
+                    painter = painterResource(id = R.drawable.bmi_menu),
+                    contentDescription = "Logo menu de itens."
+                )
 
             }
 
@@ -192,6 +217,10 @@ fun TelaInicial() {
                 colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
             ) {
                 // Conteúdo do Botão 2 (Ícone 2)
+                Image(
+                    painter = painterResource(id = R.drawable.bmi_camera),
+                    contentDescription = "Logo câmera fotográfica."
+                )
 
             }
 
@@ -204,11 +233,9 @@ fun TelaInicial() {
 
             ) {
                 // Conteúdo do Botão 3 (Ícone 3)
-                Icon(
-                    imageVector = Icons.Filled.Person,
-                    contentDescription = null,
-                    modifier = Modifier.size(ButtonDefaults.IconSize)
-
+                Image(
+                    painter = painterResource(id = R.drawable.bmi_perfil),
+                    contentDescription = "Logo perfil do usuário."
                 )
             }
 
@@ -221,10 +248,9 @@ fun TelaInicial() {
 
             ) {
                 // Conteúdo do Botão 4 (Ícone 4)
-                Icon(
-                    imageVector = Icons.Rounded.Settings,
-                    contentDescription = null,
-                    modifier = Modifier.size(ButtonDefaults.IconSize)
+                Image(
+                    painter = painterResource(id = R.drawable.bmi_config),
+                    contentDescription = "Logo de configurações."
                 )
 
             }
