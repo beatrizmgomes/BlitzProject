@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BlitzProject</string>
+    <string name="title_activity_tela_menu">TelaMenu</string>
+    <string name="title_activity_teste">teste</string>
 </resources>
