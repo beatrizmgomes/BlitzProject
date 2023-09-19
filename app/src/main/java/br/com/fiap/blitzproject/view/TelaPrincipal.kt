@@ -1,4 +1,4 @@
-package br.com.fiap.blitzproject
+package br.com.fiap.blitzproject.view
 
 
 import android.os.Bundle
@@ -33,11 +33,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.blitzproject.ui.theme.BlitzProjectTheme
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.rounded.Settings
-import androidx.compose.material3.Icon
 import androidx.compose.ui.res.painterResource
+import br.com.fiap.blitzproject.R
 
 
 class TelaPrincipal : ComponentActivity() {

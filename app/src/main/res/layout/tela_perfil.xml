@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="204dp"
+        android:layout_height="196dp"
+        android:src="@drawable/bmi_perfil"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="7"
+        android:inputType="text"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Ana"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"/>
+
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="13"
+        android:gravity="center"
+        android:inputType="text"
+        android:text="anacontato@contato.com.br"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:gravity="center"
+        android:text="(DDD)99999-9999"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/editTextTextPostalAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:layout_gravity="center"
+        android:text="Rua das Pitangas, 137"
+        android:layout_marginBottom="10dp"/>
+</LinearLayout>
