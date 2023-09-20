@@ -2,4 +2,8 @@
     <string name="app_name">BlitzProject</string>
     <string name="title_activity_tela_menu">TelaMenu</string>
     <string name="title_activity_teste">teste</string>
+    <string name="title_activity_outra">OutraActivity</string>
+    <string name="title_activity_screens">Screens</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

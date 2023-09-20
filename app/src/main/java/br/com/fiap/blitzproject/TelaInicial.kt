@@ -33,16 +33,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.blitzproject.ui.theme.BlitzProjectTheme
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.rounded.Settings
-import androidx.compose.material3.Icon
 import androidx.compose.ui.res.painterResource
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 
 class TelaPrincipal : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             BlitzProjectTheme {
                 // A surface container using the 'background' color from the theme
@@ -50,7 +49,7 @@ class TelaPrincipal : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TelaInicial()
+                    TelaInicial(navController = rememberNavController())
                 }
 
             }
@@ -59,7 +58,9 @@ class TelaPrincipal : ComponentActivity() {
 }
 
 @Composable
-fun TelaInicial() {
+fun TelaInicial(
+    navController: NavController
+) {
 
     Box(
         modifier = Modifier
@@ -195,7 +196,7 @@ fun TelaInicial() {
 
         ) {
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { },
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxWidth(),
