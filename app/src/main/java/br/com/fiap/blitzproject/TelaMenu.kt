@@ -31,6 +31,8 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 
 class TelaMenu : ComponentActivity() {
@@ -51,7 +53,8 @@ class TelaMenu : ComponentActivity() {
 }
 
 @Composable
-fun LeftMenu(
+fun TelaMenu(
+    navController: NavController,
     onMenuItemClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -116,10 +119,10 @@ private fun MenuItem(text: String, selected: Boolean, onClick: () -> Unit) {
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun TelaMenuPreview() {
-    BlitzProjectTheme {
-        TelaMenu()
-    }
-}
+//@Preview(showBackground = true, showSystemUi = true)
+//@Composable
+//fun TelaMenuPreview() {
+//    BlitzProjectTheme {
+//        TelaMenu()
+//    }
+//}
