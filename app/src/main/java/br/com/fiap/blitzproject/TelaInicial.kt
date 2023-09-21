@@ -5,20 +5,25 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 
 
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -33,6 +38,7 @@ import androidx.compose.ui.unit.sp
 import br.com.fiap.blitzproject.ui.theme.BlitzProjectTheme
 
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
@@ -47,7 +53,6 @@ class TelaPrincipal : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
                 ) {
                     TelaInicial(navController = rememberNavController())
                 }
@@ -57,208 +62,143 @@ class TelaPrincipal : ComponentActivity() {
     }
 }
 
+
+
 @Composable
 fun TelaInicial(
     navController: NavController
 ) {
-
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp), // Ajuste o espaço conforme necessário
-        contentAlignment = Alignment.TopEnd // Posiciona o conteúdo no canto superior direito
-    ) {
-        Text(
-            text = "Bem vindo(a), Ana!",
-            color = Color.Black,
-            fontSize = 18.sp
-        )
-    }
-
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp), // Adicione margens para dar espaço aos botões
-        verticalArrangement = Arrangement.Center, // Alinhar a coluna verticalmente no centro
-        horizontalAlignment = Alignment.CenterHorizontally
+            .padding(16.dp),
+        verticalArrangement = Arrangement.SpaceBetween
     ) {
-        // Primeira linha
-        Row(
+        // Botões "Adicionar Ocorrência" e "Localização"
+        Column(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
-        )
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            BotaoGrande(
+                onClick = { /* Ação para Adicionar Ocorrência */ },
+                texto = "Adicionar Ocorrência",
+                iconeResId = R.drawable.bmi_lista
+            )
 
-        {
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .weight(1f) // Distribuir espaço igualmente entre os botões
-                    .fillMaxWidth(), // Preencher a largura máxima
-                colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
-            ) {
-
-                Text(
-                    text = "Adicionar Ocorrência",
-                    color = Color.Black
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.bmi_lista),
-                    contentDescription = "Imagem de lista/adição",
-                    modifier = Modifier
-                        .size(40.dp)
-                )
-            }
-
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .weight(1f) // Distribuir espaço igualmente entre os botões
-                    .fillMaxWidth(), // Preencher a largura máxima
-                colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
-
-            ) {
-                Text(
-                    text = "Avaliar Localização",
-                    color = Color.Black
-                )
-
-                Image(
-                    painter = painterResource(id = R.drawable.bmi_localizacao),
-                    contentDescription = "Logo localização/google maps",
-                    modifier = Modifier
-                        .size(40.dp)
-                )
-            }
+            BotaoGrande(
+                onClick = { /* Ação para Avaliar Localização */ },
+                texto = "Localização",
+                iconeResId = R.drawable.bmi_localizacao
+            )
         }
 
-        // Segunda linha
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Botões "Feedback" e "Contato"
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            BotaoGrande(
+                onClick = { /* Ação para Feedback */ },
+                texto = "Feedback",
+                iconeResId = R.drawable.bmi_feedbackcliente
+            )
+
+            BotaoGrande(
+                onClick = { /* Ação para Contato Policial */ },
+                texto = "Contato",
+                iconeResId = R.drawable.bmi_contato
+            )
+        }
+
+        // Botões "Menu", "Camera", "Perfil" e "Configurações"
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .weight(1f) // Distribuir espaço igualmente entre os botões
-                    .fillMaxWidth(), // Preencher a largura máxima
-                colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
-
-            ) {
-                Text(
-                    text = "Contato Policial",
-                    color = Color.Black
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.bmi_contato),
-                    contentDescription = "Logo Whatsapp",
-                    modifier = Modifier
-                        .size(40.dp)
-                )
-            }
-
-
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .weight(1f) // Distribuir espaço igualmente entre os botões
-                    .fillMaxWidth(), // Preencher a largura máxima
-                colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
-
-            ) {
-                Text(
-                    text = "Feedback",
-                    color = Color.Black
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.bmi_feedbackcliente),
-                    contentDescription = "Logo feedback do cliente, polegar positivo.",
-                    modifier = Modifier
-                        .size(40.dp)
-                )
-            }
-
-        }
-
-    }
-
-
-    // Barra inferior tela
-    Column(
-        verticalArrangement = Arrangement.Bottom,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth() // Ocupar toda a largura da tela
-                .padding(16.dp), // Espaçamento interno
-
-//                    horizontalArrangement = Arrangement.SpaceBetween // Alinhamento dos elementos dentro da Row
-
-        ) {
-            Button(
+            BotaoPequeno(
                 onClick = { navController.navigate("telaMenu") },
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
-            ) {
-                // Conteúdo do Botão 1 (Ícone 1)
-                Image(
-                    painter = painterResource(id = R.drawable.bmi_menu),
-                    contentDescription = "Logo menu de itens."
-                )
+                iconeResId = R.drawable.bmi_menu
+            )
 
-            }
+            BotaoPequeno(
+                onClick = { /* Ação para Câmera */ },
+                iconeResId = R.drawable.bmi_camera
+            )
 
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
-            ) {
-                // Conteúdo do Botão 2 (Ícone 2)
-                Image(
-                    painter = painterResource(id = R.drawable.bmi_camera),
-                    contentDescription = "Logo câmera fotográfica."
-                )
+            BotaoPequeno(
+                onClick = { navController.navigate("telaPerfil") },
+                iconeResId = R.drawable.bmi_perfil
+            )
 
-            }
-
-            Button(
-                onClick = {navController.navigate("telaPerfil")},
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
-
-            ) {
-                // Conteúdo do Botão 3 (Ícone 3)
-                Image(
-                    painter = painterResource(id = R.drawable.bmi_perfil),
-                    contentDescription = "Logo perfil do usuário."
-                )
-            }
-
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
-
-            ) {
-                // Conteúdo do Botão 4 (Ícone 4)
-                Image(
-                    painter = painterResource(id = R.drawable.bmi_config),
-                    contentDescription = "Logo de configurações."
-                )
-
-            }
+            BotaoPequeno(
+                onClick = { /* Ação para Configurações */ },
+                iconeResId = R.drawable.bmi_config
+            )
         }
-
     }
 }
+
+@Composable
+fun BotaoGrande(
+    onClick: () -> Unit,
+    texto: String,
+    iconeResId: Int
+) {
+    Button(
+        onClick = onClick,
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(150.dp) // Aumenta a altura dos botões de texto grande
+            .background(Color.LightGray),
+        shape = MaterialTheme.shapes.large,
+        contentPadding = PaddingValues(16.dp)
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Image(
+                painter = painterResource(id = iconeResId),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(48.dp)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = texto,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+    }
+}
+
+@Composable
+fun BotaoPequeno(
+    onClick: () -> Unit,
+    iconeResId: Int
+) {
+    Button(
+        onClick = onClick,
+        modifier = Modifier
+            .size(60.dp)
+            .background(Color.LightGray),
+        shape = CircleShape,
+        contentPadding = PaddingValues(8.dp)
+    ) {
+        Image(
+            painter = painterResource(id = iconeResId),
+            contentDescription = null,
+            modifier = Modifier
+                .size(36.dp)
+        )
+    }
+}
+
 
 
 
