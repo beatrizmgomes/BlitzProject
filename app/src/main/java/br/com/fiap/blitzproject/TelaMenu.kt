@@ -65,9 +65,7 @@ fun TelaMenuComposable(navController: NavController) {
         )
     }
 
-    Button(onClick = { navController.navigate("perfil") }) {
 
     }
-}
 
 

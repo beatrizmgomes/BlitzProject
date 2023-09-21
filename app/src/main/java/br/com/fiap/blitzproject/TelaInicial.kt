@@ -226,7 +226,7 @@ fun TelaInicial(
             }
 
             Button(
-                onClick = { /*TODO*/ },
+                onClick = {navController.navigate("telaPerfil")},
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxWidth(),
