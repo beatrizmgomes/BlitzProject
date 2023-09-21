@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 
 
-
 import androidx.compose.foundation.layout.Column
 
 
@@ -41,6 +40,7 @@ import androidx.navigation.compose.rememberNavController
 class TelaPrincipal : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         setContent {
             BlitzProjectTheme {
@@ -166,9 +166,9 @@ fun TelaInicial(
 
             ) {
                 Text(
-                text = "Feedback",
-                color = Color.Black
-            )
+                    text = "Feedback",
+                    color = Color.Black
+                )
                 Image(
                     painter = painterResource(id = R.drawable.bmi_feedbackcliente),
                     contentDescription = "Logo feedback do cliente, polegar positivo.",
@@ -196,7 +196,7 @@ fun TelaInicial(
 
         ) {
             Button(
-                onClick = { },
+                onClick = { navController.navigate("telaMenu") },
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxWidth(),
@@ -226,7 +226,7 @@ fun TelaInicial(
             }
 
             Button(
-                onClick = { /*TODO*/ },
+                onClick = {navController.navigate("telaPerfil")},
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxWidth(),
