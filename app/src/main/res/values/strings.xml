@@ -8,4 +8,6 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_tela_perfil">TelaPerfil</string>
     <string name="title_activity_tela_formulario">TelaFormulario</string>
+    <string name="title_activity_tela_ocorrencia">TelaOcorrencia</string>
+    <string name="title_activity_shared_preferences_manager">SharedPreferencesManager</string>
 </resources>

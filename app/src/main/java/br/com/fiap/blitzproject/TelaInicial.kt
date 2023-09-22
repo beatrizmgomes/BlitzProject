@@ -81,7 +81,7 @@ fun TelaInicial(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             BotaoGrande(
-                onClick = { /* Ação para Adicionar Ocorrência */ },
+                onClick = { navController.navigate("telaOcorrencia")  },
                 texto = "Adicionar Ocorrência",
                 iconeResId = R.drawable.bmi_lista
             )

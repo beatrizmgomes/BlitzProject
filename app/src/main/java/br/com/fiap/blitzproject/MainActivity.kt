@@ -1,11 +1,9 @@
 package br.com.fiap.blitzproject
 
+import OcorrenciaPolicialForm
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
-import androidx.navigation.NavGraph
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -24,6 +22,7 @@ class MainActivity : ComponentActivity() {
                     composable(route = "telaInicial") { TelaInicial(navController) }
                     composable(route = "telaMenu") { TelaMenuComposable(navController) }
                     composable(route = "telaPerfil"){ TelaPerfilComposable(navController)}
+                    composable(route = "telaOcorrencia") { OcorrenciaPolicialForm(navController)}
                 }
             }
         }

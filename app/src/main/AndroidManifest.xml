@@ -13,6 +13,16 @@
         android:theme="@style/Theme.BlitzProject"
         tools:targetApi="31">
         <activity
+            android:name=".SharedPreferencesManager"
+            android:exported="false"
+            android:label="@string/title_activity_shared_preferences_manager"
+            android:theme="@style/Theme.BlitzProject" />
+        <activity
+            android:name=".TelaOcorrencia"
+            android:exported="false"
+            android:label="@string/title_activity_tela_ocorrencia"
+            android:theme="@style/Theme.BlitzProject" />
+        <activity
             android:name=".TelaFormulario"
             android:exported="false"
             android:label="@string/title_activity_tela_formulario"
